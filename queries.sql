@@ -9,3 +9,10 @@ insert into post  (client_id, content, title) values
 (3, 'content_three', 'title_three'),
 (2, 'content_four', 'title_four'),
 (1, 'content_five', 'title_five');
+
+CREATE PROCEDURE w19c.blog_post(title_input varchar(100), content_input varchar(255))
+modifies sql data
+begin
+	insert into post (title, content)
+	values (title_input, content_input)
+commit
